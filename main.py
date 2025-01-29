@@ -1,7 +1,8 @@
 #
 # Client-side python app for photoapp, this time working with
-# web service, which in turn uses AWS S3 and RDS to implement
-# a simple photo application for photo storage and viewing.
+# web service, which in turn uses AWS S3, RDS, and Rekognition
+# to implement a simple photo application for photo analysis, 
+# storage, and viewing.
 #
 # Authors:
 #   
