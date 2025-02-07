@@ -6,7 +6,7 @@
 #
 # Authors:
 #   
-#   <<<YOUR NAME>>>
+#   Matthew Khoriaty
 #
 #   Starter code: Prof. Joe Hummel
 #   Northwestern University
@@ -403,10 +403,10 @@ def download(baseurl):
     #
     # TODO:
     #
-    userid = "?"
-    assetname = "?"  
-    bucketkey = "?"
-    bytes = "?"
+    userid = body['user_id']
+    assetname = body['asset_name']  
+    bucketkey = body['bucket_key'] 
+    bytes = body['data']
 
     print("userid:", userid)
     print("asset name:", assetname)
@@ -418,7 +418,9 @@ def download(baseurl):
     #
     # TODO
     #
-
+    decoded = base64.b64decode(bytes)
+    outfile = open(assetname, 'wb')
+    outfile.write(decoded)
     print(f"Downloaded from S3 and saved as '{assetname}'")
 
   except Exception as e:
